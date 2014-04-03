@@ -1,0 +1,6 @@
+*.lock
+*.swp
+.bundle
+.ruby-version
+/cookbooks/
+/vendor/bundle/
