@@ -1,4 +1,4 @@
 site :opscode
 
-cookbook "ulimit"
-cookbook "redisio"
+cookbook "ulimit", "~> 0.3.2"
+cookbook "redisio", "~> 1.7.1"
