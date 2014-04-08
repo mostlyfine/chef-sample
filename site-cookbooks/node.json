@@ -1,0 +1,9 @@
+{
+  "npm": {
+    "version": "1.4.6"
+  },
+  "run_list": [
+    "recipe[nodejs]",
+    "recipe[npm]"
+  ]
+}
