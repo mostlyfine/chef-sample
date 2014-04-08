@@ -1,0 +1,8 @@
+{
+  "run_list": [
+    "yum::epel",
+    "yum::remi",
+    "yum::repoforge",
+    "build-essential"
+  ]
+}
