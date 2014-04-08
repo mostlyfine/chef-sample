@@ -1,0 +1,17 @@
+{
+  "npm": {
+    "version": "1.4.6"
+  },
+  "run_list": [
+    "yum::epel",
+    "yum::remi",
+    "yum::repoforge",
+    "build-essential",
+    "recipe[nodejs]",
+    "recipe[npm]",
+    "recipe[redisio::install]",
+    "recipe[redisio::enable]",
+    "recipe[mongodb::10gen_repo]",
+    "recipe[mongodb]"
+  ]
+}
