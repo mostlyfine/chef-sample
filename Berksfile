@@ -7,3 +7,4 @@ cookbook "redisio", "~> 1.7.1"
 cookbook "nodejs"
 cookbook "npm"
 cookbook 'mongodb' #, git:'git://github.com/edelight/chef-mongodb.git'
+cookbook 'ntp'
