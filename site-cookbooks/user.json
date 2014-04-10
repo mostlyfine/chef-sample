@@ -1,0 +1,9 @@
+{
+  "my_environment": {
+    "user": "sawa"
+  },
+  "run_list": [
+    "my_environment"
+  ]
+}
+
