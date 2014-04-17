@@ -1,0 +1,9 @@
+{
+  "rbenv": {
+    "build": "2.1.1"
+  },
+  "run_list": [
+    "rbenv::default",
+    "rbenv::install"
+  ]
+}
