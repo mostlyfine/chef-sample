@@ -9,11 +9,11 @@
 
 group "rbenv" do
   action :create
-  members "vagrant"
+  members node.rbenv.members
   append true
 end
 
-git "/usr/local/rbenv" do
+git node.rbenv.rbenv_root do
   repository "git://github.com/sstephenson/rbenv.git"
   reference "master"
   action :checkout
@@ -21,20 +21,20 @@ git "/usr/local/rbenv" do
   group "rbenv"
 end
 
-directory "/usr/local/rbenv/plugins" do
-  owner "#{node.rbenv.user}"
+directory "#{node.rbenv.rbenv_root}/plugins" do
+  owner node.rbenv.user
   group "rbenv"
   mode "0755"
   action :create
 end
 
-template "/etc/profile.d/rbenv.sh" do
+template "#{node.rbenv.profile_path}/rbenv.sh" do
   owner "#{node.rbenv.user}"
   group "#{node.rbenv.user}"
   mode 0644
 end
 
-git "/usr/local/rbenv/plugins/ruby-build" do
+git "#{node.rbenv.rbenv_root}/plugins/ruby-build" do
   repository "git://github.com/sstephenson/ruby-build.git"
   reference "master"
   action :checkout
