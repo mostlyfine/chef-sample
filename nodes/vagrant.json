@@ -9,6 +9,13 @@
     "global": "2.1.1",
     "profile_path": "/home/sawa/.rbenv"
   },
+  "ndenv": {
+    "user": "sawa",
+    "ndenv_root": "/home/sawa/.ndenv",
+    "build": ["v0.10.26", "v0.11.12"],
+    "global": "v0.11.12",
+    "profile_path": "/home/sawa/.rbenv"
+  },
   "timezone": "Asia/Tokyo",
   "run_list": [
     "ntp",
@@ -20,6 +27,8 @@
     "my_environment",
     "rbenv::default",
     "rbenv::install",
+    "ndenv::default",
+    "ndenv::install",
     "recipe[redisio::install]",
     "recipe[redisio::enable]",
     "recipe[mongodb::10gen_repo]",
