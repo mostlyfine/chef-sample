@@ -8,12 +8,6 @@
 #
 username = node[:my_environment][:user]
 
-%w(zsh tmux wget vim git lv).each do |pkg|
-  package pkg do
-    action :install
-  end
-end
-
 user username do
   home "/home/#{username}"
   shell "/bin/zsh"
