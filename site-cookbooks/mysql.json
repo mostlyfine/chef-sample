@@ -5,6 +5,7 @@
     "server_repl_password": "mysql"
   },
   "run_list": [
-    "recipe[mysql::server]"
+    "recipe[mysql::server]",
+    "recipe[mysql::client]"
   ]
 }
