@@ -16,6 +16,11 @@
     "global": "v0.11.12",
     "profile_path": "/home/sawa/.rbenv"
   },
+  "plenv": {
+    "user": "sawa",
+    "plenv_root": "/home/sawa/.plenv",
+    "profile_path": "/home/sawa/.plenv"
+  },
   "timezone": "Asia/Tokyo",
   "run_list": [
     "recipe[curl]",
@@ -31,6 +36,8 @@
     "rbenv::install",
     "ndenv::default",
     "ndenv::install",
+    "plenv::default",
+    "plenv::install",
     "recipe[redisio::install]",
     "recipe[redisio::enable]",
     "recipe[mongodb::10gen_repo]",

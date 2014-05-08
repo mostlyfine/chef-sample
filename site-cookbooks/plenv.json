@@ -1,0 +1,10 @@
+{
+  "plenv": {
+    "build": "5.18.2"
+  },
+  "run_list": [
+    "plenv::default",
+    "plenv::install"
+  ]
+}
+
