@@ -1,5 +1,6 @@
 site :opscode
 
+cookbook "curl"
 cookbook "yum"
 cookbook "build-essential"
 cookbook "ulimit", "~> 0.3.2"
