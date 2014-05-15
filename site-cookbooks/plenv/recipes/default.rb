@@ -6,6 +6,15 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+%w{build-essential curl}.each do |rcp|
+  include_recipe rcp
+end
+
+%w{patch zlib-devel openssl-devel readline-devel ncurses-devel gdbm-devel db4-devel libffi-devel tk-devel libyaml-devel}.each do |pkg|
+  package pkg do
+    action :install
+  end
+end
 
 group "plenv" do
   action :create
