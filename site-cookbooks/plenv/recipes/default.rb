@@ -23,6 +23,7 @@ group "plenv" do
 end
 
 git node.plenv.plenv_root do
+  not_if { File.exist?(node.plenv.plenv_root) }
   repository "git://github.com/tokuhirom/plenv.git"
   reference "master"
   action :sync
@@ -31,6 +32,7 @@ git node.plenv.plenv_root do
 end
 
 directory "#{node.plenv.plenv_root}/plugins" do
+  not_if { File.exist?("#{node.plenv.plenv_root}/plugins") }
   owner node.plenv.user
   group "plenv"
   mode 0755
@@ -39,6 +41,7 @@ directory "#{node.plenv.plenv_root}/plugins" do
 end
 
 git "#{node.plenv.plenv_root}/plugins/perl-build" do
+  not_if { File.exist?("#{node.plenv.plenv_root}/plugins/perl-build") }
   repository "git://github.com/tokuhirom/perl-build.git"
   reference "master"
   action :sync
@@ -47,6 +50,7 @@ git "#{node.plenv.plenv_root}/plugins/perl-build" do
 end
 
 directory node.plenv.profile_path do
+  not_if { File.exist?(node.plenv.profile_path) }
   owner node.plenv.user
   group "plenv"
   mode 0755
@@ -55,6 +59,7 @@ directory node.plenv.profile_path do
 end
 
 template "#{node.plenv.profile_path}/plenv.sh" do
+  not_if { File.exist?("#{node.plenv.profile_path}/plenv.sh" ) }
   owner node.plenv.user
   group "plenv"
   mode 0644
