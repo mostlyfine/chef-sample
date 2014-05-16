@@ -5,8 +5,8 @@
   "rbenv": {
     "user": "sawa",
     "rbenv_root": "/home/sawa/.rbenv",
-    "build": ["2.1.0", "2.1.1"],
-    "global": "2.1.1",
+    "build": ["2.1.0", "2.1.2"],
+    "global": "2.1.2",
     "profile_path": "/home/sawa/.rbenv"
   },
   "ndenv": {
