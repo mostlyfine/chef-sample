@@ -1,6 +1,10 @@
 {
   "rbenv": {
-    "build": "2.1.1"
+    "user": "sawa",
+    "rbenv_root": "/home/sawa/.rbenv",
+    "profile_path": "/home/sawa/.rbenv",
+    "build": "2.1.2",
+    "global": "2.1.2"
   },
   "run_list": [
     "rbenv::default",
