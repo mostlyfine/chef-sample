@@ -26,7 +26,7 @@ directory "/home/#{username}/.ssh" do
   owner username
   group username
   mode 0700
-  not_if {"test -d /home/#{username}/.ssh"}
+  not_if { File.exist?("/home/#{username}/.ssh") }
 end
 
 cookbook_file "/home/#{username}/.ssh/authorized_keys" do
@@ -34,10 +34,11 @@ cookbook_file "/home/#{username}/.ssh/authorized_keys" do
   group username
   mode 0600
   source "authorized_keys"
-  not_if {"test -f /home/#{username}/.ssh/authorized_keys"}
+  not_if { File.exist?("/home/#{username}/.ssh/authorized_keys") }
 end
 
 git "/home/#{username}/dotfiles" do
+  not_if { File.exist?("/home/#{username}/dotfiles") }
   repository "https://github.com/mostlyfine/dotfiles.git"
   revision "master"
   user username
@@ -46,11 +47,13 @@ git "/home/#{username}/dotfiles" do
 end
 
 directory "/home/#{username}/dotfiles/.vim/bundle" do
+  not_if { File.exist?("/home/#{username}/dotfiles/.vim/bundle") }
   owner username
   group username
 end
 
 git "/home/#{username}/dotfiles/.vim/bundle/vundle" do
+  not_if { File.exist?("/home/#{username}/dotfiles/.vim/bundle/vundle") }
   repository "https://github.com/gmarik/vundle.git"
   revision "master"
   user username
@@ -60,7 +63,10 @@ end
 
 %w(.zshrc .zshenv .vim .vimrc .tmux.conf .screenrc .pryrc .irbrc .inputrc .gitconfig .gemrc).each do |file|
   link "/home/#{username}/#{file}" do
+    not_if { File.exist?("/home/#{username}/#{file}") }
     to "/home/#{username}/dotfiles/#{file}"
+    user username
+    group username
     link_type :symbolic
   end
 end
