@@ -1,6 +1,10 @@
 {
   "plenv": {
-    "build": "5.18.2"
+    "user": "sawa",
+    "plenv_root": "/home/sawa/.plenv",
+    "profile_path": "/home/sawa/.plenv",
+    "build": ["5.18.2"],
+    "global": "5.18.2"
   },
   "run_list": [
     "plenv::default",
