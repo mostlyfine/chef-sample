@@ -12,9 +12,9 @@
   "ndenv": {
     "user": "sawa",
     "ndenv_root": "/home/sawa/.ndenv",
+    "profile_path": "/home/sawa/.ndenv",
     "build": ["v0.10.26", "v0.11.12"],
-    "global": "v0.11.12",
-    "profile_path": "/home/sawa/.rbenv"
+    "global": "v0.11.12"
   },
   "plenv": {
     "user": "sawa",
